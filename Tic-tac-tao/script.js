@@ -6,7 +6,7 @@ let currentPlayer = 'X';
 let gameActive = true;
 let board = ['', '', '', '', '', '', '', '', ''];
 
-// Winning combinations for Tic-Tac-Toe
+
 const winningCombinations = [
   [0, 1, 2],
   [3, 4, 5],
@@ -18,21 +18,17 @@ const winningCombinations = [
   [2, 4, 6]
 ];
 
-// Handle cell click
+
 function handleCellClick(event) {
   const clickedCell = event.target;
   const cellIndex = clickedCell.getAttribute('data-index');
 
-  // Prevent clicking on a cell that's already filled or if the game is over
   if (board[cellIndex] !== '' || !gameActive) {
     return;
   }
-
-  // Update the board and the UI
   board[cellIndex] = currentPlayer;
   clickedCell.textContent = currentPlayer;
 
-  // Check if there's a win or tie
   if (checkWin()) {
     message.textContent = `Player ${currentPlayer} wins!`;
     gameActive = false;
@@ -40,13 +36,13 @@ function handleCellClick(event) {
     message.textContent = `It's a tie!`;
     gameActive = false;
   } else {
-    // Switch players
+
     currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
     message.textContent = `Player ${currentPlayer}'s turn`;
   }
 }
 
-// Check for a winning combination
+
 function checkWin() {
   return winningCombinations.some(combination => {
     return combination.every(index => {
@@ -55,7 +51,6 @@ function checkWin() {
   });
 }
 
-// Reset the game
 function resetGame() {
   currentPlayer = 'X';
   board = ['', '', '', '', '', '', '', '', ''];

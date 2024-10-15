@@ -35,11 +35,11 @@ body {
 
 .cell:hover {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-  transform: scale(1.05); /* Slight scaling effect on hover */
+  transform: scale(1.05); 
 }
 
 .cell:active {
-  transform: scale(1); /* Return to original size when clicked */
+  transform: scale(1); 
 }
   
   #message {
@@ -56,6 +56,6 @@ body {
   #reset:hover {
     border-radius: 17px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
-    transform: scale(1.05); /* Slight scaling effect on hover */
+    transform: scale(1.05);
   }
   
